@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>ORDER FOOD</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/a15b5a1603.js" crossorigin="anonymous"></script>
+    <style>
+    body{
+      background-color: #ffe6f2;
+      width: 100%;
+    }
+    .navbar{
+      position: fixed;
+      transition: 0.3s;
+      background-color: #ff3399;
+      margin-top: 0px;
+      height: 50px;
+      width: 100%;
+      z-index: 1;
+    }
+      ol{
+        list-style: none;
+      }
+      .navbar li{
+        float: left;
+      }
+      .navbar ol{
+        overflow: auto;
+      }
+      ol a{
+        color: white;
+        text-decoration: none;
+        font-weight: bolder;
+        font-family: garamond, serif;
+        font-size: 22px;
+        margin-top: 40px;
+      }
+      .sidemenu{
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        height: 100%;
+        width: 0px;
+        overflow:hidden;
+        background-color: #ff3399;
+        z-index: 1;
+        overflow-x: hidden;
+        color: white;
+        border: 2px solid #ffe6f2;
+        padding-top: 50px;
+        margin-top: 50px;
+        transition: all 0.2s;
+      }
+      #icon1{
+        transition: all 0.6s;
+      }
+      .sidemenu a {
+        padding-left: 55px;
+        text-decoration: none;
+        font-size: 24px;
+        color: white;
+        display: block;
+        padding-top: 25px;
+      }
+      .sidemenu a:hover{
+        color:#99004d;
+      }
+      .sidemenu .closebtn{
+        position: absolute;
+        top: -18px;
+        right: 35px;
+        font-size: 36px;
+        margin-left: 32px;
+
+      }
+      .navbar li a {
+        padding-left: 20px;
+      }
+      i{
+        margin-top: 9px;
+        color: white;
+      }
+      ol a:hover{
+        color: #99004d;
+      }
+      #icon1:hover{
+        color:#99004d;
+      }
+      #logo{
+        padding-left: 20px;
+      }
+      #heading{
+        color: #ff3399;
+        margin-top: 380px;
+        margin-left: 257px;
+      }
+      #logout{
+        padding-top: 250px;
+      }
+      div input:hover{
+        background-color: #cc0099;
+        color: white;
+      }
+      .services div:hover{
+        background-color: #cc0099;
+        color: white;
+      }
+        .abouts h3{
+        margin-left: 257px;
+        color:#ff3399;
+      }
+      .aboutsimg{
+        height: 400px;
+        width:70px;
+        margin-left: 257px;
+        margin-right: 264px;
+        border: 3px solid white;
+      }
+      .contacts h3{
+        padding-left: 20px;
+        color: white;
+      }
+      .contacts{
+        width: 100%;
+      }
+      .contactdetails{
+        background-color: #ff3399;
+        height: 400px;
+      }
+      .feedback{
+        border: 3px solid white;
+        margin-left:600px;
+      }
+      .feedback label{
+        color: white;
+        font-weight: bold;
+      }
+      .info{
+        color: white;
+        text-align: center;
+      }
+      #submit{
+        margin-left: 120px;
+        color: #ff3399;
+        background-color: white;
+      }
+      .contactdetails h3{
+        text-align: center;
+      }
+      .social{
+        text-align: center;
+      }
+      .social li{
+        display: inline;
+      }
+      .social i{
+        color: white;
+      }
+      #submit:hover{
+        color:white;
+        background-color: #cc0099;
+      }
+      .social i:hover{
+        color: #cc0099;
+      }
+      .feedback label{
+        margin-left: 15px;
+        padding-bottom: 30px;
+      }
+      .feedback input{
+        margin-right: 30px;
+      }
+      .contacts{
+        width: 100%;
+      }
+      #video{
+        height: 400px;
+        width: 1200px;
+        margin-left: 150px;
+      }
+      .shopping div{
+        border:2px solid white;
+        background-color: #ff3399;
+        height: 250px;
+        width: 900px;
+        margin-left: 250px;
+        margin-top: 75px;
+        margin-right: 400px;
+      }
+      #shopsec img{
+        height: 200px;
+        width: 300px;
+        position: relative;
+        left: 20px;
+        top: 25px;
+      }
+      .shopping #shopart{
+        color:white;
+        position: relative;
+        left: 340px;
+        top: -170px;
+        font-size: 20px;
+      }
+      #shopart h5{
+        font-weight: bolder;
+      }
+      .shopping a{
+        text-decoration: none;
+      }
+      #shopsec{
+        height: 250px;
+      }
+      #shopsec:hover{
+        background-color: #cc0099;
+      }
+      .shopping div{
+        margin-top: 20px;
+      }
+      .sidemenu i:hover{
+        color: #cc0099;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <ol>
+          <li id="nothing"><i class="fas fa-align-justify" id="icon1" onclick="openFunction()"></i></li>
+          <li><a href="home.php"><img src="image/translogo.png" alt="logo" height="42px" width="60px" id="logo"</a></li>
+          <li id="serv"><a href="#shopping">Services</a></li>
+          <li id="about"><a href="#abouts">About</a></li>
+          <li id="contact"><a href="#contacts">Contact Us</a></li>
+          <li id="contact"><a href="search.html">Search</a></li>
+        </ol>
+      </nav> <br>
+      <div class="sidemenu" id="menu">
+        <a href="#"><i class="fas fa-user-circle"> Account</i></a>
+        <a href="#shopping"><i class="fas fa-sitemap"> Services</i></a>
+        <a href="#abouts"><i class="fas fa-info-circle"> About Us</i></a>
+        <a href="#contacts"><i class="far fa-address-card"> Contact Us</i></a>
+        <a href="search.html"><i class="fas fa-search"> Search</i></a>
+        <a href="#" id="logout"><i class="fas fa-sign-out-alt" id="icon2"> Log Out</i></a>
+        <a href="#" class="closebtn" onclick="closeFunction()">&times;</a>
+      </div>
+    </header><br>
+    <div class="shopping" id="shopping">
+      <div class="zomato" id="zomato">
+        <a target="_blank" href="https://www.zomato.com/">
+        <section id="shopsec">
+        <img src="image/zomato.png" alt="zomato">
+        <article id="shopart">
+          <h5>ZOMATO</h5>
+          <h6>It has 32,100,000+ visitors monthly and has about 100,000,000+ downloads</h6>
+          <h5>Details</h5>
+          <h6>Zomato suggests local and nearby restaurants to users and receive orders <br>from them. Users can place orders from their favorite restaurant based on <br>Ratings and reviews shared by previous customers.</h6>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> Overall Rating Of Almost 4.1 Stars
+        </article>
+      </section></a>
+      </div>
+      <div class="swiggy">
+        <a target="_blank" href="https://www.swiggy.com/">
+        <section id="shopsec">
+        <img src="image/swiggy.png" alt="swiggy">
+        <article id="shopart">
+          <h5>SWIGGY</h5>
+          <h6>It has 20M visitors monthly and has about 100,000,000+ downloads</h6>
+          <h5>Details</h5>
+          <h6>Swiggy suggests local and nearby restaurants to users and receive orders <br>from them. Users can place orders from their favorite restaurant based on <br>Ratings and reviews shared by previous customers.</h6>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> Overall Rating Of Almost 4.1 Stars
+        </article>
+      </section></a>
+      </div>
+      <div class="ubereats">
+        <a target="_blank" href="https://www.ubereats.com/">
+        <section id="shopsec">
+        <img src="image/ubereats.png" alt="ubereats">
+        <article id="shopart">
+          <h5>UBER EATS</h5>
+          <h6>It has 21M visitors monthly and has about 100,000,000+ downloads</h6>
+          <h5>Details</h5>
+          <h6>Uber Eats is an online food ordering and delivery platform users can read <br>menus, reviews and ratings, order, and pay for food from restaurants</h6>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i>Overall Rating Of Almost 3.7 Stars
+        </article>
+      </section></a>
+      </div>
+      <div class="domino">
+        <a target="_blank" href="https://www.dominos.co.in/">
+        <section id="shopsec">
+        <img src="image/dominos.png" alt="domino">
+        <article id="shopart">
+          <h5>DOMINO'S</h5>
+          <h6>It has 180M visitors monthly and has about 10,000,000+ downloads</h6>
+          <h5>Details</h5>
+          <h6>Delivery/carryout chain offering a wide range of pizzas & a variety of <br>Other dishes & sides.</h6>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> Overall Rating Of Almost 4.5 Stars
+        </article>
+      </section></a>
+      </div>
+      <div class="kfc">
+        <a target="_blank" href="https://online.kfc.co.in/">
+        <section id="shopsec">
+        <img src="image/kfc.png" alt="kfc">
+        <article id="shopart">
+          <h5>KFC</h5>
+          <h6>It has 50M visitors monthly and has about 10,000,000+ downloads</h6>
+          <h5>Details</h5>
+          <h6>Delivery/carryout chain offering a wide range of non-veg items & a variety of <br>Other dishes & sides.</h6>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i> Overall Rating Of Almost 3.6 Stars
+        </article>
+      </section></a>
+      </div>
+      <div class="grubhub">
+        <a target="_blank" href="https://www.grubhub.com/">
+        <section id="shopsec">
+        <img src="image/grubhub.png" alt="ajio">
+        <article id="shopart">
+          <h5>GRUBHUB</h5>
+          <h6>It has 34.1M visitors monthly and has about 10,000,000+ downloads</h6>
+          <h5>Details</h5>
+          <h6>Grubhub helps you find and order food from wherever you are. How it <br>Works you type in an address, we tell you the restaurants <br>That deliver to that locality</h6>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> Overall Rating Of Almost 4.4 Stars
+        </article>
+      </section></a>
+      </div>
+      <div class="deliveroo">
+        <a target="_blank" href="https://deliveroo.co.uk/">
+        <section id="shopsec">
+        <img src="image/deliveroo.png" alt="deliveroo">
+        <article id="shopart">
+          <h5>DELIVEROO</h5>
+          <h6>It has 116K visitors monthly and has about 10,000,000+ downloads</h6>
+          <h5>Details</h5>
+          <h6>The best local restaurants and takeaways are here to Deliver. <br>Order on Deliveroo today!</H6>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> Overall Rating Of Almost 4.6 Stars
+        </article>
+      </section></a>
+      </div>
+      <div class="dunzo">
+        <a target="_blank" href="https://www.dunzo.com/">
+        <section id="shopsec">
+        <img src="image/dunzo.jpg" alt="dunzo">
+        <article id="shopart">
+          <h5>DUNZO</h5>
+          <h6>It has 2M visitors monthly and has about 5,000,000+ downloads</h6>
+          <h5>Details</h5>
+          <h6>Use Dunzo and get free home delivery in your city Order from restaurants <br>nearby, groceries, buy online medicine, purchase meat online, book bike <br>taxi and much more</h6>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> Overall Rating Of Almost 4.6 Stars
+        </article>
+      </section></a>
+      </div>
+      <div class="eatiko">
+        <a target="_blank" href="https://www.eatiko.com/">
+        <section id="shopsec">
+        <img src="image/eatiko.jpg" alt="eatiko">
+        <article id="shopart">
+          <h5>EATIKO</h5>
+          <h6>It has 4M visitors monthly and has about 10,000,000+ downloads</h6>
+          <h5>Details</h5>
+          <h6>Eat whatever you like, whenever you Want. Whether you want a tasty dosa <br>For breakfast, or a heavenly sadhya for lunch, or a refreshing coffee to boost <br>Up your energy</h6>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> Overall Rating Of Almost 4.6 Stars
+        </article>
+      </section></a>
+      </div>
+      <div class="foodpanda">
+        <a target="_blank" href="https://www.foodpanda.com/">
+        <section id="shopsec">
+        <img src="image/foodpanda.png" alt="foodpanda">
+        <article id="shopart">
+          <h5>FOOD PANDA</h5>
+          <h6>It has 10M visitors monthly and has about 10,000,000+ downloads</h6>
+          <h5>Details</h5>
+          <h6>Food Panda is not just about bringing you good food from your favourite <br>Restaurants. It's about making a connection, which is why we sit down.</h6>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i> Overall Rating Of Almost 3.2 Stars
+        </article>
+      </section></a>
+      </div>
+      <div class="pizzahut">
+        <a target="_blank" href="https://www.pizzahut.co.in/">
+        <section id="shopsec">
+        <img src="image/pizzahut.jpg" alt="pizzahut">
+        <article id="shopart">
+          <h5>PIZZA HUT</h5>
+          <h6>It has 340k visitors monthly and has about 1,000,000+ downloads</h6>
+          <h5>Details</h5>
+          <h6>Pizza Hut 2 Medium Pizzas @Rs.599*. Try with new Momo Mia Pizza <br>Save upto 43%. Order Now. Experience Safe, Hygienic & Contactless <br>Delivery. Trust in Every Bite. 30 Minutes</h6>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> Overall Rating Of Almost 4.1 Stars
+        </article>
+      </section></a>
+      </div>
+      <div class="mcdelivery">
+        <a target="_blank" href="https://www.mcdelivery.co.in/home">
+        <section id="shopsec">
+        <img src="image/mcdelivery.png" alt="mcdelivery">
+        <article id="shopart">
+          <h5>MCDELIVERY</h5>
+          <h6>It has 300K visitors monthly and has about 5,000,000+ downloads</h6>
+          <h5>Details</h5>
+          <h6>Order for Home-Delivered Smiles ... McDelivery allows you to experience <br>Delicious McDonald's food from the comfort of your sofa at home or cubicle <br>In office and much more</h6>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> Overall Rating Of Almost 4.2 Stars
+        </article>
+      </section></a>
+      </div>
+      <div class="eatsure">
+        <a target="_blank" href="https://www.eatsure.com/">
+        <section id="shopsec">
+        <img src="image/eatsure.png" alt="eatsure">
+        <article id="shopart">
+          <h5>EAT SURE</h5>
+          <h6>It has 201k visitors monthly and has about 5,000,000+ downloads</h6>
+          <h5>Details</h5>
+          <h6>Exciting Times At EatSure A sneak peek into some exciting moments in our <br>Journey. Join us as we serve tasty and safe meals, cooked freshly in our <br>Network of team</h6>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> Overall Rating Of Almost 4.4 Stars
+        </article>
+      </section></a>
+      </div>
+      <div class="dineout">
+      <a target="_blank" href="https://www.dineout.co.in/">
+      <section id="shopsec">
+      <img src="image/dineout.png" alt="dineout">
+      <article id="shopart">
+        <h5>DINE OUT</h5>
+        <h6>It has 600k visitors monthly and has about 10,000,000+ downloads</h6>
+        <h5>Details</h5>
+        <h6>Find best restaurants in Delhi offering discounts on food & drinks, check <br>Out menu, reviews and also book a table through dineout for free.</h6>
+        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> Overall Rating Of Almost 4.6 Stars
+      </article>
+    </section></a>
+    </div>
+      <div class="freshmenu">
+        <a target="_blank" href="https://www.freshmenu.com/">
+        <section id="shopsec">
+        <img src="image/freshmenu.jpg" alt="freshmenu">
+        <article id="shopart">
+          <h5>FRESHMENU</h5>
+          <h6>It has 1M visitors monthly and has about 1,000,000+ downloads</h6>
+          <h5>Details</h5>
+          <h6>Order food online from FreshMenu. Choose from a wide range of cuisines <br>And categories for food delivery. Get fresh home delivered food at your <br>Doorstep</h6>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i> Overall Rating Of Almost 3.8 Stars
+        </article>
+      </section></a>
+      </div>
+      <div class="eatfit">
+        <a target="_blank" href="https://www.eatfit.in/">
+        <section id="shopsec">
+        <img src="image/eatfit.jpg" alt="eatfit">
+        <article id="shopart">
+          <h5>EAT FIT</h5>
+          <h6>It has 100K visitors monthly and has no app to download</h6>
+          <h5>Details</h5>
+          <h6>At Eatfit we offer healthy, yummy, honest & wholesome Indian food, made <br>With real ingredients, zero trans fat, and lots of love! <br>#HealthyMadeHappier.</h6>
+          **HAS NO RATING**
+        </article>
+      </section></a>
+      </div>
+      <div class="faasos">
+        <a target="_blank" href="https://www.faasos.com/">
+        <section id="shopsec">
+        <img src="image/faasos.png" alt="faasos">
+        <article id="shopart">
+          <h5>FAASOS</h5>
+          <h6>It has 34K visitors monthly and has no app to download</h6>
+          <h5>Details</h5>
+          <h6>Enjoy Delicious Rajma Masala Meal, Butter Chicken Rice Combo & Many <br>More. Order Now! A meal of delicious flavours & delicious savings! <br>Contactless Delivery. Fresh Ingredients.</h6>
+          **HAS NO RATING**
+        </article>
+      </section></a>
+      </div>
+      <div class="box8">
+        <a target="_blank" href="https://box8.in/">
+        <section id="shopsec">
+        <img src="image/box8.png" alt="box8">
+        <article id="shopart">
+          <h5>BOX8</h5>
+          <h6>It has 42K visitors monthly and has about 1,000,000+ downloads</h6>
+          <h5>Details</h5>
+          <h6>Order Desi Meals online.<br>Superfast delivery in 38 minutes. 120+ stores in <br>Mumbai, Pune, Bangalore, Delhi-NCR.</h6>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> Overall Rating Of Almost 4.4 Stars
+        </article>
+      </section></a>
+      </div>
+      <div class="zaaroz">
+        <a target="_blank" href="https://zaaroz.in/">
+        <section id="shopsec">
+        <img src="image/zaaroz.png" alt="zaaroz">
+        <article id="shopart">
+          <h5>ZAAROZ</h5>
+          <h6>It has 30K visitors monthly and has about 100,000+ downloads</h6>
+          <h5>Details</h5>
+          <h6>ZAAROZ Redefining Delivery! <br>Order anything from your preferred. Local Restaurants or <br>Vendors without ever leaving the comfort of your home!</h6>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> Overall Rating Of Almost 4.2 Stars
+        </article>
+      </section></a>
+      </div>
+    <div class="eatclub">
+      <a target="_blank" href="https://eatclub.in/">
+      <section id="shopsec">
+      <img src="image/eatclub.jpg" alt="eatclub">
+      <article id="shopart">
+        <h5>EAT CLUB</h5>
+        <h6>It has ** visitors monthly and has about 100,000+ downloads</h6>
+        <h5>Details</h5>
+        <h6>A membership program that takes you straight to a no-nonsense, curated <br>Selection of restaurants. Get unlimited savings with 30% OFF every time <br>On all your deliveries</h6>
+        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> Overall Rating Of Almost 4.5 Stars
+      </article>
+    </section></a>
+    </div>
+    </div>
+    <br>
+    <div class="abouts" id="abouts">
+      <h3 id="abouth">About Us</h3>
+      <div class="aboutsvid">
+        <video src="video/abvid.mp4" type="video/mp4" id="video" autoplay mute></video>`
+      </div>
+    </div><br><br>
+    <div class="contacts" id="contacts">
+      <div class="contactdetails">
+        <h3>Contact Us</h3><br>
+        <form  action="feedback.php" method="post">
+          <table class="feedback">
+            <tr>
+              <td><label for="name">Name: </label></td>
+              <td>  <input type="text" name="name"  placeholder="Enter Your Name"><br><br></td>
+            </tr>
+            <tr>
+              <td><label for="phone">Phone No :</label></td>
+              <td><input type="tel" name="phone"  placeholder="Enter Your Phone No"><br><br></td>
+            </tr>
+            <tr>
+              <td><label for="mail">Email-id: </label></td>
+              <td><input type="mail" name="mail" placeholder="Enter Your Email"><br><br></td>
+            </tr>
+            <tr>
+              <td colspan="2"><input type="submit" id="submit" name="submit" value="SUBMIT"></td>
+            </tr>
+        </table>
+        </form>
+        <div class="info">
+          <p>The rights for the website are reserved. Any violation to disobey laws is under cyber crime any issue of use or copyright may lead to an offence <br>The content
+          is authorized by &#169;<strong> Copyright Act 1957</strong> </p>
+        </div>
+        <div class="social">
+          <a href="https://www.instagram.com/versatileengine/" target="_blank"><li><i class="fab fa-instagram-square" style="font-size : 40px;"></i></li></a>
+          <a href="https://www.facebook.com/profile.php?id=100075057470078" target="_blank"><li><i class="fab fa-facebook-square" style="font-size : 40px;"></i></li></a>
+          <a href="mailto:versatile.engine.2001@gmail.com" target="_blank"><li><i class="fas fa-envelope-square" style="font-size : 40px;"></i></li></a>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      function openFunction(){
+        document.getElementById("menu").style.width="259px";
+        document.getElementById("icon1").style.visibility="hidden";
+        document.getElementById("icon1").style.transition = "0.01s";
+      }
+      function closeFunction(){
+        document.getElementById("menu").style.width="0px";
+        document.getElementById("icon1").style.visibility="visible";
+      }
+      var video = document.querySelector('video');
+      video.muted = true;
+      video.play()
+      video.loop = true;
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    </body>
+</html>

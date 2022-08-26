@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>FLIGHT BOOKING</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/a15b5a1603.js" crossorigin="anonymous"></script>
+    <style>
+    body{
+      background-color: #ffe6f2;
+      width: 100%;
+    }
+    .navbar{
+      position: fixed;
+      transition: 0.3s;
+      background-color: #ff3399;
+      margin-top: 0px;
+      height: 50px;
+      width: 100%;
+      z-index: 1;
+    }
+      ol{
+        list-style: none;
+      }
+      .navbar li{
+        float: left;
+      }
+      .navbar ol{
+        overflow: auto;
+      }
+      ol a{
+        color: white;
+        text-decoration: none;
+        font-weight: bolder;
+        font-family: garamond, serif;
+        font-size: 22px;
+        margin-top: 40px;
+      }
+      .sidemenu{
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        height: 100%;
+        width: 0px;
+        overflow:hidden;
+        background-color: #ff3399;
+        z-index: 1;
+        overflow-x: hidden;
+        color: white;
+        border: 2px solid #ffe6f2;
+        padding-top: 50px;
+        margin-top: 50px;
+        transition: all 0.2s;
+      }
+      #icon1{
+        transition: all 0.6s;
+      }
+      .sidemenu a {
+        padding-left: 55px;
+        text-decoration: none;
+        font-size: 24px;
+        color: white;
+        display: block;
+        padding-top: 25px;
+      }
+      .sidemenu a:hover{
+        color:#99004d;
+      }
+      .sidemenu .closebtn{
+        position: absolute;
+        top: -18px;
+        right: 35px;
+        font-size: 36px;
+        margin-left: 32px;
+
+      }
+      .navbar li a {
+        padding-left: 20px;
+      }
+      i{
+        margin-top: 9px;
+        color: white;
+      }
+      ol a:hover{
+        color: #99004d;
+      }
+      #icon1:hover{
+        color:#99004d;
+      }
+      #logo{
+        padding-left: 20px;
+      }
+      #heading{
+        color: #ff3399;
+        margin-top: 380px;
+        margin-left: 257px;
+      }
+      #logout{
+        padding-top: 250px;
+      }
+      div input:hover{
+        background-color: #cc0099;
+        color: white;
+      }
+      .services div:hover{
+        background-color: #cc0099;
+        color: white;
+      }
+        .abouts h3{
+        margin-left: 257px;
+        color:#ff3399;
+      }
+      .aboutsimg{
+        height: 400px;
+        width:70px;
+        margin-left: 257px;
+        margin-right: 264px;
+        border: 3px solid white;
+      }
+      .contacts h3{
+        padding-left: 20px;
+        color: white;
+      }
+      .contacts{
+        width: 100%;
+      }
+      .contactdetails{
+        background-color: #ff3399;
+        height: 400px;
+      }
+      .feedback{
+        border: 3px solid white;
+        margin-left:600px;
+      }
+      .feedback label{
+        color: white;
+        font-weight: bold;
+      }
+      .info{
+        color: white;
+        text-align: center;
+      }
+      #submit{
+        margin-left: 120px;
+        color: #ff3399;
+        background-color: white;
+      }
+      .contactdetails h3{
+        text-align: center;
+      }
+      .social{
+        text-align: center;
+      }
+      .social li{
+        display: inline;
+      }
+      .social i{
+        color: white;
+      }
+      #submit:hover{
+        color:white;
+        background-color: #cc0099;
+      }
+      .social i:hover{
+        color: #cc0099;
+      }
+      .feedback label{
+        margin-left: 15px;
+        padding-bottom: 30px;
+      }
+      .feedback input{
+        margin-right: 30px;
+      }
+      .contacts{
+        width: 100%;
+      }
+      #video{
+        height: 400px;
+        width: 1200px;
+        margin-left: 150px;
+      }
+      .shopping div{
+        border:2px solid white;
+        background-color: #ff3399;
+        height: 250px;
+        width: 900px;
+        margin-left: 250px;
+        margin-top: 75px;
+        margin-right: 400px;
+      }
+      #shopsec img{
+        height: 200px;
+        width: 300px;
+        position: relative;
+        left: 20px;
+        top: 25px;
+      }
+      .shopping #shopart{
+        color:white;
+        position: relative;
+        left: 340px;
+        top: -170px;
+        font-size: 20px;
+      }
+      #shopart h5{
+        font-weight: bolder;
+      }
+      .shopping a{
+        text-decoration: none;
+      }
+      #shopsec{
+        height: 250px;
+      }
+      #shopsec:hover{
+        background-color: #cc0099;
+      }
+      .shopping div{
+        margin-top: 20px;
+      }
+      .sidemenu i:hover{
+        color: #cc0099;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <ol>
+          <li id="nothing"><i class="fas fa-align-justify" id="icon1" onclick="openFunction()"></i></li>
+          <li><a href="home.php"><img src="image/translogo.png" alt="logo" height="42px" width="60px" id="logo"</a></li>
+          <li id="serv"><a href="#shopping">Services</a></li>
+          <li id="about"><a href="#abouts">About</a></li>
+          <li id="contact"><a href="#contacts">Contact Us</a></li>
+          <li id="contact"><a href="search.html">Search</a></li>
+
+        </ol>
+      </nav> <br>
+      <div class="sidemenu" id="menu">
+        <a href="#"><i class="fas fa-user-circle"> Account</i></a>
+        <a href="#shopping"><i class="fas fa-sitemap"> Services</i></a>
+        <a href="#abouts"><i class="fas fa-info-circle"> About Us</i></a>
+        <a href="#contacts"><i class="far fa-address-card"> Contact Us</i></a>
+        <a href="search.html"><i class="fas fa-search"> Search</i></a>
+        <a href="#" id="logout"><i class="fas fa-sign-out-alt" id="icon2"> Log Out</i></a>
+        <a href="#" class="closebtn" onclick="closeFunction()">&times;</a>
+      </div>
+    </header><br>
+    <div class="shopping" id="shopping">
+      <div class="makemytrip">
+        <a target="_blank" href="https://www.makemytrip.com/flights/">
+        <section id="shopsec">
+        <img src="image/makemytrip.png" alt="makemytrip">
+        <article id="shopart">
+          <h5>MAKE MY TRIP</h5>
+          <h6>It has 21M visitors monthly and has about 50,000,000+ downloads</h6>
+          <h5>Details</h5>
+          <h6>For making your flight booking, you simply need to visit the official website <br>Or app of MakeMyTrip. Then you have to enter all the required details</h6>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> Overall Rating Of Almost 4.5 Stars
+        </article>
+      </section></a>
+      </div>
+      <div class="goibibo">
+        <a target="_blank" href="https://www.goibibo.com/flights/">
+        <section id="shopsec">
+        <img src="image/goibibo.png" alt="goibibo">
+        <article id="shopart">
+          <h5>GOIBIBO</h5>
+          <h6>It has 30M visitors monthly and has about 50,000,000+ downloads</h6>
+          <h5>Details</h5>
+          <h6>Use Code : SAVEMORE , Get Upto 1500 Off on Flights. Book Now to <br>Save More. Quick, Easy & Hassle Free Booking. Multiple Bank Offers. No <br>Cost EMIs. Book Now!</h6>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> Overall Rating Of Almost 4.4 Stars
+        </article>
+      </section></a>
+      </div>
+      <div class="irctcair">
+        <a target="_blank" href="https://www.air.irctc.co.in/">
+        <section id="shopsec">
+        <img src="image/irctcair.jpg" alt="irctcair">
+        <article id="shopart">
+          <h5>IRCTC AIR</h5>
+          <h6>It has 12M visitors monthly and has about 10,000,000+ downloads</h6>
+          <h5>Details</h5>
+          <h6>IRCTC Air is an IATA certified website that offers affordable flight tickets for <br>Both domestic and international travel</h6>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> Overall Rating Of Almost 4.2 Stars
+        </article>
+      </section></a>
+      </div>
+      <div class="yatra">
+        <a target="_blank" href="https://www.yatra.com/">
+        <section id="shopsec">
+        <img src="image/yatra.png" alt="yatra">
+        <article id="shopart">
+          <h5>YATRA</h5>
+          <h6>It has 3M visitors monthly and has about 10,000,000+ downloads</h6>
+          <h5>Details</h5>
+          <h6>Lowest Flight Fares. Earn eCash on Booking. Leading Travel Brand. Lowest <br>Price Guarantee. Avail Banks Offer. Redeem on Flight & Hotel. Book Now at <br>Yatra! 24x7</h6>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> Overall Rating Of Almost 4.1 Stars
+        </article>
+      </section></a>
+      </div>
+      <div class="kayak">
+        <a target="_blank" href="https://www.kayak.co.in/">
+        <section id="shopsec">
+        <img src="image/kayak.png" alt="kayak">
+        <article id="shopart">
+          <h5>KAYAK</h5>
+          <h6>It has 120M visitors monthly and has about 10,000,000+ downloads</h6>
+          <h5>Details</h5>
+          <h6>Find and book cheap airline tickets, hotel rooms, holidays and car hire for <br>Indian travellers with KAYAK.co.in. Search hundreds of travel sites</h6>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> Overall Rating Of Almost 4.4 Stars
+        </article>
+      </section></a>
+      </div>
+      <div class="ixigo">
+        <a target="_blank" href="https://www.ixigo.com/">
+        <section id="shopsec">
+        <img src="image/ixigo.png" alt="ixigo">
+        <article id="shopart">
+          <h5>IXIGO</h5>
+          <h6>It has 30M visitors monthly and has about 10,000,000+ downloads</h6>
+          <h5>Details</h5>
+          <h6>Get upto 5000 Off on flight booking. Use code: DEAL. Valid for all users.<br>Discounts Winter Sale: Up to ₹5,000 off on Flights · Code DEAL · Valid <br>Nov 1 - Dec 31</h6>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> Overall Rating Of Almost 4.5 Stars
+        </article>
+      </section></a>
+      </div>
+      <div class="skyscanner">
+        <a target="_blank" href="https://www.skyscanner.co.in/">
+        <section id="shopsec">
+        <img src="image/skyscanner.jpg" alt="skyscanner">
+        <article id="shopart">
+          <h5>SKYSCANNER</h5>
+          <h6>It has 100M visitors monthly and has about 50,000,000+ downloads</h6>
+          <h5>Details</h5>
+          <h6>Find cheap flights, hotels & cars for rent from over 1200 travel providers. <br>Plan your travel with peace of mind – book flexible flight tickets</h6>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> Overall Rating Of Almost 4.6 Stars
+          </article>
+      </section></a>
+      </div>
+      <div class="cleartrip">
+        <a target="_blank" href="https://www.cleartrip.com/flights">
+        <section id="shopsec">
+        <img src="image/cleartrip.jpg" alt="cleartrip">
+        <article id="shopart">
+          <h5>CLEAR TRIP</h5>
+          <h6>It has 10M visitors monthly and has about 10,000,000+ downloads</h6>
+          <h5>Details</h5>
+          <h6>Save up to Rs.5000 on Flight Tickets. Use Code CTFLY & Book Now on <br>Cleartrip™. Valid till 15-Dec. Domestic Flight Bookings. Baggage Insurance <br>Flexifly Booking Option. Fare Alerts.</h6>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> Overall Rating Of Almost 4.3 Stars
+        </article>
+      </section></a>
+      </div>
+      <div class="hopper">
+        <a target="_blank" href="https://www.hopper.com/">
+        <section id="shopsec">
+        <img src="image/hopper.png" alt="hopper">
+        <article id="shopart">
+          <h5>HOPPER</h5>
+          <h6>It has 886K visitors monthly and has 1M+ downloads</h6>
+          <h5>Details</h5>
+          <h6>Hopper analyzes billions of prices daily to predict how prices will change, <br>And tells you whether to buy or wait. Save up to 40% on your next flight</h6>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> Overall Rating Of Almost 4.1 Stars
+        </article>
+      </section></a>
+      </div>
+      <div class="wego">
+        <a target="_blank" href="https://www.wego.co.in/flights">
+        <section id="shopsec">
+        <img src="image/wego.png" alt="wego">
+        <article id="shopart">
+          <h5>WEGO</h5>
+          <h6>It has 160K visitors monthly and has about 10,000,000+ downloads</h6>
+          <h5>Details</h5>
+          <h6>Book your flights & hotels on Wego.co.in :airplane: Compare over 1000 <br>Booking sites ✓ Find the lowest price ✓ Fast & easy Booking ✓ Find out <br>More now.</h6>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> Overall Rating Of Almost 4.2 Stars
+        </article>
+      </section></a>
+      </div>
+      <div class="cheapflight">
+        <a target="_blank" href="https://www.in.cheapflights.com/">
+        <section id="shopsec">
+        <img src="image/cheapflight.jpg" alt="cheapflight">
+        <article id="shopart">
+          <h5>CHEAP FLIGHTS</h5>
+          <h6>It has 200K visitors monthly and has about 10,000,000+ downloads</h6>
+          <h5>Details</h5>
+          <h6>Search and Compare Cheap Flights from 100s of Airlines, Travel Agents <br>And Travel Sites. Compare And Save On A Wide Choice Of Cheap Flights <br>Online Today! Price comparison</h6>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> Overall Rating Of Almost 4.2 Stars
+        </article>
+      </section></a>
+      </div>
+      <div class="emirates">
+        <a target="_blank" href="https://www.emirates.com/in/english/">
+        <section id="shopsec">
+        <img src="image/emirates.png" alt="emirates">
+        <article id="shopart">
+          <h5>FASTTRACK</h5>
+          <h6>It has 560K visitors monthly and has about 5,000,000+ downloads</h6>
+          <h5>Details</h5>
+          <h6>Book flights across the world and Fly Better with Emirates. Explore our <br>Global routes, find the best fares, and discover our unforgettable onboard</h6>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> Overall Rating Of Almost 4.7 Stars
+        </article>
+      </section></a>
+      </div>
+      <div class="lufthansa">
+        <a target="_blank" href="https://www.lufthansa.com/in/en/homepage">
+        <section id="shopsec">
+        <img src="image/lufthansa.png" alt="lufthansa">
+        <article id="shopart">
+          <h5>LUFTHANSA</h5>
+          <h6>It has 160K visitors monthly and has about 5,000,000+ downloads</h6>
+          <h5>Details</h5>
+          <h6>Book flights online to worldwide destinations and enjoy a pleasant travel <br>Experience in comfort and safety. Look out for great offers and discounts.</h6>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i> Overall Rating Of Almost 3.7 Stars
+        </article>
+      </section></a>
+      </div>
+      <div class="qatarairways">
+      <a target="_blank" href="https://www.qatarairways.com/en-in/homepage.html">
+      <section id="shopsec">
+      <img src="image/qatarairways.png" alt="qatarairways">
+      <article id="shopart">
+        <h5>QATAR AIRWAYS</h5>
+        <h6>It has 30k visitors monthly and has about 1,000,000+ downloads</h6>
+        <h5>Details</h5>
+        <h6>Plan ahead with guaranteed flexibility including unlimited date and <br>Destination changes and fee-free refund, for travel until 31 May 2022.</h6>
+        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> Overall Rating Of Almost 4.5 Stars
+      </article>
+    </section></a>
+    </div>
+      <div class="airindia">
+        <a target="_blank" href="https://www.airindia.in/">
+        <section id="shopsec">
+        <img src="image/airindia.png" alt="airindia">
+        <article id="shopart">
+          <h5>AIR INDIA</h5>
+          <h6>It has 500K visitors monthly and has about 1,000,000+ downloads</h6>
+          <h5>Details</h5>
+          <h6>Air India, the National Carrier of India, offers connections to over 70 <br>International and 100 domestic destinations for your travel plan</h6>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i> Overall Rating Of Almost 3.8 Stars
+        </article>
+      </section></a>
+      </div>
+      <div class="indigo">
+        <a target="_blank" href="https://www.goindigo.in/">
+        <section id="shopsec">
+        <img src="image/indigo.png" alt="indigo">
+        <article id="shopart">
+          <h5>INDIGO</h5>
+          <h6>It has 40K+ visitors monthly and has about 10,000,000+ downloads</h6>
+          <h5>Details</h5>
+          <h6>Online flight booking with IndiGo. Book your domestic & international <br>Flight tickets at the lowest airfare with best offers at goIndiGo.in website <br>And app.</h6>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> Overall Rating Of Almost 4.6 Stars
+        </article>
+      </section></a>
+      </div>
+      <div class="spicejet">
+        <a target="_blank" href="https://www.spicejet.com/">
+        <section id="shopsec">
+        <img src="image/spicejet.png" alt="spicejet">
+        <article id="shopart">
+          <h5>SPICEJET</h5>
+          <h6>It has 24K visitors monthly and has about 5,000,000+ downloads</h6>
+          <h5>Details</h5>
+          <h6>SpiceJet, India's favorite domestic airline, cheap air tickets flight booking <br>To 46 cities across India and international destinations.</h6>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i> Overall Rating Of Almost 3.1 Stars
+        </article>
+      </section></a>
+      </div>
+      <div class="vistara">
+        <a target="_blank" href="https://www.airvistara.com/">
+        <section id="shopsec">
+        <img src="image/vistara.jpg" alt="vistara">
+        <article id="shopart">
+          <h5>VISTARA</h5>
+          <h6>It has 20K visitors monthly and has about 1,000,000+ downloads</h6>
+          <h5>Details</h5>
+          <h6>Fly on India's Best Airline with world-class sanitisation standards and warm <br>Hospitality. Special discounts for students, friends, family and senior <br>Citizens. Full Service Airline.</h6>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i> Overall Rating Of Almost 3.8 Stars
+        </article>
+      </section></a>
+      </div>
+  </div>
+    <br>
+    <div class="abouts" id="abouts">
+      <h3 id="abouth">About Us</h3>
+      <div class="aboutsvid">
+        <video src="video/abvid.mp4" type="video/mp4" id="video" autoplay mute></video>`
+      </div>
+    </div><br><br>
+    <div class="contacts" id="contacts">
+      <div class="contactdetails">
+        <h3>Contact Us</h3><br>
+        <form  action="feedback.php" method="post">
+          <table class="feedback">
+            <tr>
+              <td><label for="name">Name: </label></td>
+              <td>  <input type="text" name="name"  placeholder="Enter Your Name"><br><br></td>
+            </tr>
+            <tr>
+              <td><label for="phone">Phone No :</label></td>
+              <td><input type="tel" name="phone"  placeholder="Enter Your Phone No"><br><br></td>
+            </tr>
+            <tr>
+              <td><label for="mail">Email-id: </label></td>
+              <td><input type="mail" name="mail" placeholder="Enter Your Email"><br><br></td>
+            </tr>
+            <tr>
+              <td colspan="2"><input type="submit" id="submit" name="submit" value="SUBMIT"></td>
+            </tr>
+        </table>
+        </form>
+        <div class="info">
+          <p>The rights for the website are reserved. Any violation to disobey laws is under cyber crime any issue of use or copyright may lead to an offence <br>The content
+          is authorized by &#169;<strong> Copyright Act 1957</strong> </p>
+        </div>
+        <div class="social">
+          <a href="https://www.instagram.com/versatileengine/" target="_blank"><li><i class="fab fa-instagram-square" style="font-size : 40px;"></i></li></a>
+          <a href="https://www.facebook.com/profile.php?id=100075057470078" target="_blank"><li><i class="fab fa-facebook-square" style="font-size : 40px;"></i></li></a>
+          <a href="mailto:versatile.engine.2001@gmail.com" target="_blank"><li><i class="fas fa-envelope-square" style="font-size : 40px;"></i></li></a>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      function openFunction(){
+        document.getElementById("menu").style.width="259px";
+        document.getElementById("icon1").style.visibility="hidden";
+        document.getElementById("icon1").style.transition = "0.01s";
+      }
+      function closeFunction(){
+        document.getElementById("menu").style.width="0px";
+        document.getElementById("icon1").style.visibility="visible";
+      }
+      var video = document.querySelector('video');
+      video.muted = true;
+      video.play()
+      video.loop = true;
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    </body>
+</html>

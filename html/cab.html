@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>CAB BOOKING</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/a15b5a1603.js" crossorigin="anonymous"></script>
+    <style>
+    body{
+      background-color: #ffe6f2;
+      width: 100%;
+    }
+    .navbar{
+      position: fixed;
+      transition: 0.3s;
+      background-color: #ff3399;
+      margin-top: 0px;
+      height: 50px;
+      width: 100%;
+      z-index: 1;
+    }
+      ol{
+        list-style: none;
+      }
+      .navbar li{
+        float: left;
+      }
+      .navbar ol{
+        overflow: auto;
+      }
+      ol a{
+        color: white;
+        text-decoration: none;
+        font-weight: bolder;
+        font-family: garamond, serif;
+        font-size: 22px;
+        margin-top: 40px;
+      }
+      .sidemenu{
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        height: 100%;
+        width: 0px;
+        overflow:hidden;
+        background-color: #ff3399;
+        z-index: 1;
+        overflow-x: hidden;
+        color: white;
+        border: 2px solid #ffe6f2;
+        padding-top: 50px;
+        margin-top: 50px;
+        transition: all 0.2s;
+      }
+      #icon1{
+        transition: all 0.6s;
+      }
+      .sidemenu a {
+        padding-left: 55px;
+        text-decoration: none;
+        font-size: 24px;
+        color: white;
+        display: block;
+        padding-top: 25px;
+      }
+      .sidemenu a:hover{
+        color:#99004d;
+      }
+      .sidemenu .closebtn{
+        position: absolute;
+        top: -18px;
+        right: 35px;
+        font-size: 36px;
+        margin-left: 32px;
+
+      }
+      .navbar li a {
+        padding-left: 20px;
+      }
+      i{
+        margin-top: 9px;
+        color: white;
+      }
+      ol a:hover{
+        color: #99004d;
+      }
+      #icon1:hover{
+        color:#99004d;
+      }
+      #logo{
+        padding-left: 20px;
+      }
+      #heading{
+        color: #ff3399;
+        margin-top: 380px;
+        margin-left: 257px;
+      }
+      #logout{
+        padding-top: 250px;
+      }
+      div input:hover{
+        background-color: #cc0099;
+        color: white;
+      }
+      .services div:hover{
+        background-color: #cc0099;
+        color: white;
+      }
+        .abouts h3{
+        margin-left: 257px;
+        color:#ff3399;
+      }
+      .aboutsimg{
+        height: 400px;
+        width:70px;
+        margin-left: 257px;
+        margin-right: 264px;
+        border: 3px solid white;
+      }
+      .contacts h3{
+        padding-left: 20px;
+        color: white;
+      }
+      .contacts{
+        width: 100%;
+      }
+      .contactdetails{
+        background-color: #ff3399;
+        height: 400px;
+      }
+      .feedback{
+        border: 3px solid white;
+        margin-left:600px;
+      }
+      .feedback label{
+        color: white;
+        font-weight: bold;
+      }
+      .info{
+        color: white;
+        text-align: center;
+      }
+      #submit{
+        margin-left: 120px;
+        color: #ff3399;
+        background-color: white;
+      }
+      .contactdetails h3{
+        text-align: center;
+      }
+      .social{
+        text-align: center;
+      }
+      .social li{
+        display: inline;
+      }
+      .social i{
+        color: white;
+      }
+      #submit:hover{
+        color:white;
+        background-color: #cc0099;
+      }
+      .social i:hover{
+        color: #cc0099;
+      }
+      .feedback label{
+        margin-left: 15px;
+        padding-bottom: 30px;
+      }
+      .feedback input{
+        margin-right: 30px;
+      }
+      .contacts{
+        width: 100%;
+      }
+      #video{
+        height: 400px;
+        width: 1200px;
+        margin-left: 150px;
+      }
+      .shopping div{
+        border:2px solid white;
+        background-color: #ff3399;
+        height: 250px;
+        width: 900px;
+        margin-left: 250px;
+        margin-top: 75px;
+        margin-right: 400px;
+      }
+      #shopsec img{
+        height: 200px;
+        width: 300px;
+        position: relative;
+        left: 20px;
+        top: 25px;
+      }
+      .shopping #shopart{
+        color:white;
+        position: relative;
+        left: 340px;
+        top: -170px;
+        font-size: 20px;
+      }
+      #shopart h5{
+        font-weight: bolder;
+      }
+      .shopping a{
+        text-decoration: none;
+      }
+      #shopsec{
+        height: 250px;
+      }
+      #shopsec:hover{
+        background-color: #cc0099;
+      }
+      .shopping div{
+        margin-top: 20px;
+      }
+      .sidemenu i:hover{
+        color: #cc0099;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <ol>
+          <li id="nothing"><i class="fas fa-align-justify" id="icon1" onclick="openFunction()"></i></li>
+          <li><a href="home.php"><img src="image/translogo.png" alt="logo" height="42px" width="60px" id="logo"</a></li>
+          <li id="serv"><a href="#shopping">Services</a></li>
+          <li id="about"><a href="#abouts">About</a></li>
+          <li id="contact"><a href="#contacts">Contact Us</a></li>
+          <li id="contact"><a href="search.html">Search</a></li>
+        </ol>
+      </nav> <br>
+      <div class="sidemenu" id="menu">
+        <a href="#"><i class="fas fa-user-circle"> Account</i></a>
+        <a href="#shopping"><i class="fas fa-sitemap"> Services</i></a>
+        <a href="#abouts"><i class="fas fa-info-circle"> About Us</i></a>
+        <a href="#contacts"><i class="far fa-address-card"> Contact Us</i></a>
+        <a href="search.html"><i class="fas fa-search"> Search</i></a>
+        <a href="#" id="logout"><i class="fas fa-sign-out-alt" id="icon2"> Log Out</i></a>
+        <a href="#" class="closebtn" onclick="closeFunction()">&times;</a>
+      </div>
+    </header><br>
+    <div class="shopping" id="shopping">
+      <div class="uber">
+        <a target="_blank" href="https://www.uber.com/">
+        <section id="shopsec">
+        <img src="image/uber.png" alt="uber">
+        <article id="shopart">
+          <h5>UBER</h5>
+          <h6>It has 93M visitors monthly and has about 500,000,000+ downloads</h6>
+          <h5>Details</h5>
+          <h6>We're committed to your safety at Uber. We've established a Door-to-Door <br>Safety Standard to help you feel safe every time you ride.</h6>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> Overall Rating Of Almost 4.2 Stars
+        </article>
+      </section></a>
+      </div>
+      <div class="ola" id="ola">
+        <a target="_blank" href="https://www.olacabs.com/">
+        <section id="shopsec">
+        <img src="image/ola.png" alt="ola">
+        <article id="shopart">
+          <h5>OLA</h5>
+          <h6>It has 32,000,000+ visitors monthly and has about 100,000,000+ downloads</h6>
+          <h5>Details</h5>
+          <h6>Ola Cabs offers to book cabs nearby your location for best fares. For best <br>Taxi service at lowest fares, say Ola!</h6>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> Overall Rating Of Almost 4.2 Stars
+        </article>
+      </section></a>
+      </div>
+      <div class="indriver">
+        <a target="_blank" href="https://indriver.com/">
+        <section id="shopsec">
+        <img src="image/indriver.jpg" alt="indriver">
+        <article id="shopart">
+          <h5>INDRIVER</h5>
+          <h6>It has 93M visitors monthly and has about 50,000,000+ downloads</h6>
+          <h5>Details</h5>
+          <h6>It is the only app that allows users to negotiate their cab fare before <br>Booking the ride in real time. The inDriver model is unique within</h6>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> Overall Rating Of Almost 4.6 Stars
+        </article>
+      </section></a>
+      </div>
+      <div class="maxim">
+        <a target="_blank" href="https://taximaxim.com/">
+        <section id="shopsec">
+        <img src="image/maxim.png" alt="maxim">
+        <article id="shopart">
+          <h5>MAXIM</h5>
+          <h6>It has 2M visitors monthly and has about 10,000,000+ downloads</h6>
+          <h5>Details</h5>
+          <h6>Maxim is among the largest taxi ordering services in the world. Found in <br>2003, it has been successfully developing an international network.</h6>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> Overall Rating Of Almost 4.1 Stars
+        </article>
+      </section></a>
+      </div>
+      <div class="freenow">
+        <a target="_blank" href="https://free-now.com/">
+        <section id="shopsec">
+        <img src="image/freenow.png" alt="freenow">
+        <article id="shopart">
+          <h5>FREENOW</h5>
+          <h6>It has 1.5M visitors monthly and has about 10,000,000+ downloads</h6>
+          <h5>Details</h5>
+          <h6>FREE NOW is a licensed ride-hailing app for taxis in 10 European <br>Countries. Book easily, pay in-app quickly and complete your trip safely!</h6>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> Overall Rating Of Almost 4.5 Stars
+        </article>
+      </section></a>
+      </div>
+      <div class="blablacar">
+        <a target="_blank" href="https://www.blablacar.in/">
+        <section id="shopsec">
+        <img src="image/blablacar.png" alt="blablacar">
+        <article id="shopart">
+          <h5>BLABLACAR</h5>
+          <h6>It has 1M visitors monthly and has about 50,000,000+ downloads</h6>
+          <h5>Details</h5>
+          <h6>BlaBlaCar is the world's leading community-based travel network. No <br>Matter where you're going, by bus or carpool, find the perfect ride from <br>Our wide range of optional drops</h6>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> Overall Rating Of Almost 4.5 Stars
+        </article>
+      </section></a>
+      </div>
+      <div class="makemytrip">
+        <a target="_blank" href="https://www.makemytrip.com/cabs/">
+        <section id="shopsec">
+        <img src="image/makemytrip.png" alt="makemytrip">
+        <article id="shopart">
+          <h5>MAKE MY TRIP</h5>
+          <h6>It has 21M visitors monthly and has about 50,000,000+ downloads</h6>
+          <h5>Details</h5>
+          <h6>For making your cab booking, you simply need to visit the official website <br>Or app of MakeMyTrip. Then you have to enter all the required details</h6>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> Overall Rating Of Almost 4.5 Stars
+        </article>
+      </section></a>
+      </div>
+      <div class="savaari">
+        <a target="_blank" href="https://www.savaari.com/">
+        <section id="shopsec">
+        <img src="image/savaari.jpg" alt="foodpanda">
+        <article id="shopart">
+          <h5>savaari</h5>
+          <h6>It has 880K visitors monthly and has about 100,000+ downloads</h6>
+          <h5>Details</h5>
+          <h6>We are Savaari Car Rentals, an online cab booking aggregator, providing <br>Customers with reliable and premium Intercity and Local car <br>Rental services.</h6>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> Overall Rating Of Almost 4.1 Stars
+        </article>
+      </section></a>
+      </div>
+      <div class="rapido">
+        <a target="_blank" href="https://www.rapido.bike/">
+        <section id="shopsec">
+        <img src="image/rapido.png" alt="rapido">
+        <article id="shopart">
+          <h5>RAPIDO</h5>
+          <h6>It has 150K visitors monthly and has about 10,000,000+ downloads</h6>
+          <h5>Details</h5>
+          <h6>Rapido is India's first and fastest-growing Bike taxi app with a whopping <br>25 Million+ app downloads. We are now running operations in more than <br>100 cities.</h6>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> Overall Rating Of Almost 4.1 Stars
+          </article>
+      </section></a>
+      </div>
+      <div class="redtaxi">
+        <a target="_blank" href="https://www.redtaxi.co.in/">
+        <section id="shopsec">
+        <img src="image/redtaxi.png" alt="redtaxi">
+        <article id="shopart">
+          <h5>RED TAXI</h5>
+          <h6>It has 18M visitors monthly and has about 1,000,000+ downloads</h6>
+          <h5>Details</h5>
+          <h6>RED TAXI provides you with a comfortable intra-city rides through sedans <br>, mini and micro vehicles starting from Rs. 10/_ per km. You can also <br>Schedule your ride</h6>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i> Overall Rating Of Almost 4.0 Stars
+        </article>
+      </section></a>
+      </div>
+      <div class="quickride">
+        <a target="_blank" href="https://quickride.in/">
+        <section id="shopsec">
+        <img src="image/quickride.png" alt="eatfit">
+        <article id="shopart">
+          <h5>QUICK RIDE</h5>
+          <h6>It has 2M visitors monthly and has 1M downloads</h6>
+          <h5>Details</h5>
+          <h6>Quick Ride taxis are hygienic and ontime with competitive fares than <br>Other cab services.</h6>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> Overall Rating Of Almost 4.5 Stars
+        </article>
+      </section></a>
+      </div>
+      <div class="meru">
+        <a target="_blank" href="https://www.meru.in/">
+        <section id="shopsec">
+        <img src="image/meru.png" alt="meru">
+        <article id="shopart">
+          <h5>MERU</h5>
+          <h6>It has 101K visitors monthly and has about 5,000,000+ downloads</h6>
+          <h5>Details</h5>
+          <h6>50% off for first time users. Use code NEWMERU. We service more than <br>+7000 locations. Convenient door to door pick up and drop service. <br>Advance bookings also available.</h6>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> Overall Rating Of Almost 4.3 Stars
+        </article>
+      </section></a>
+      </div>
+      <div class="jugnoo">
+        <a target="_blank" href="https://jugnoo.io/jugnootaxi/">
+        <section id="shopsec">
+        <img src="image/jugnoo.png" alt="jugnoo">
+        <article id="shopart">
+          <h5>JUGNOO</h5>
+          <h6>It has 24K visitors monthly and has about 5,000,000+ downloads</h6>
+          <h5>Details</h5>
+          <h6>E-hailing taxi app that provides safe, affordable rides at your doorstep.<br>Download the app & book now! Jugnoo - Sawaari India Ki jai</h6>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> Overall Rating Of Almost 4.1 Stars
+        </article>
+      </section></a>
+      </div>
+      <div class="bluesmart">
+        <a target="_blank" href="https://blu-smart.com/">
+        <section id="shopsec">
+        <img src="image/bluesmart.png" alt="bluesmart">
+        <article id="shopart">
+          <h5>BLUESMART</h5>
+          <h6>It has 20K visitors monthly and has about 100,000+ downloads</h6>
+          <h5>Details</h5>
+          <h6>100% electric, sustainable and reliable urban mobility solution.</h6>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> Overall Rating Of Almost 4.9 Stars
+        </article>
+      </section></a>
+      </div>
+      <div class="fasttrack">
+        <a target="_blank" href="http://www.fasttrackcalltaxi.in/">
+        <section id="shopsec">
+        <img src="image/fasttrack.png" alt="fasttrack">
+        <article id="shopart">
+          <h5>FASTTRACK</h5>
+          <h6>It has 442 visitors monthly and has about 1,000,000+ downloads</h6>
+          <h5>Details</h5>
+          <h6>Fasttrack taxi offers the best flat rates to its valuable customers<br>The all new cab booking app from fasttrack will make your travelling <br>Imaginable</h6>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i> Overall Rating Of Almost 3.8 Stars
+        </article>
+      </section></a>
+      </div>
+      <div class="megacabs">
+      <a target="_blank" href="https://www.megacabs.com/">
+      <section id="shopsec">
+      <img src="image/megacabs.jpg" alt="megacabs">
+      <article id="shopart">
+        <h5>MEGA CABS</h5>
+        <h6>It has 1.4k visitors monthly and has about 50,000+ downloads</h6>
+        <h5>Details</h5>
+        <h6>Mega Cabs is a well-established cab service provider company in India <br>Specialized in rendering a comprehensive long and short term car rental <br>Solutions.</h6>
+        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i> Overall Rating Of Almost 2.9 Stars
+      </article>
+    </section></a>
+    </div>
+
+  </div>
+    <br>
+    <div class="abouts" id="abouts">
+      <h3 id="abouth">About Us</h3>
+      <div class="aboutsvid">
+        <video src="video/abvid.mp4" type="video/mp4" id="video" autoplay mute></video>`
+      </div>
+    </div><br><br>
+    <div class="contacts" id="contacts">
+      <div class="contactdetails">
+        <h3>Contact Us</h3><br>
+        <form  action="feedback.php" method="post">
+          <table class="feedback">
+            <tr>
+              <td><label for="name">Name: </label></td>
+              <td>  <input type="text" name="name"  placeholder="Enter Your Name"><br><br></td>
+            </tr>
+            <tr>
+              <td><label for="phone">Phone No :</label></td>
+              <td><input type="tel" name="phone"  placeholder="Enter Your Phone No"><br><br></td>
+            </tr>
+            <tr>
+              <td><label for="mail">Email-id: </label></td>
+              <td><input type="mail" name="mail" placeholder="Enter Your Email"><br><br></td>
+            </tr>
+            <tr>
+              <td colspan="2"><input type="submit" id="submit" name="submit" value="SUBMIT"></td>
+            </tr>
+        </table>
+        </form>
+        <div class="info">
+          <p>The rights for the website are reserved. Any violation to disobey laws is under cyber crime any issue of use or copyright may lead to an offence <br>The content
+          is authorized by &#169;<strong> Copyright Act 1957</strong> </p>
+        </div>
+        <div class="social">
+          <a href="https://www.instagram.com/versatileengine/" target="_blank"><li><i class="fab fa-instagram-square" style="font-size : 40px;"></i></li></a>
+          <a href="https://www.facebook.com/profile.php?id=100075057470078" target="_blank"><li><i class="fab fa-facebook-square" style="font-size : 40px;"></i></li></a>
+          <a href="mailto:versatile.engine.2001@gmail.com" target="_blank"><li><i class="fas fa-envelope-square" style="font-size : 40px;"></i></li></a>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      function openFunction(){
+        document.getElementById("menu").style.width="259px";
+        document.getElementById("icon1").style.visibility="hidden";
+        document.getElementById("icon1").style.transition = "0.01s";
+      }
+      function closeFunction(){
+        document.getElementById("menu").style.width="0px";
+        document.getElementById("icon1").style.visibility="visible";
+      }
+      var video = document.querySelector('video');
+      video.muted = true;
+      video.play()
+      video.loop = true;
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    </body>
+</html>

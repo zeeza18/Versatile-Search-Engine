@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>RENT BIKE SCOOTER</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/a15b5a1603.js" crossorigin="anonymous"></script>
+    <style>
+    body{
+      background-color: #ffe6f2;
+      width: 100%;
+    }
+    .navbar{
+      position: fixed;
+      transition: 0.3s;
+      background-color: #ff3399;
+      margin-top: 0px;
+      height: 50px;
+      width: 100%;
+      z-index: 1;
+    }
+      ol{
+        list-style: none;
+      }
+      .navbar li{
+        float: left;
+      }
+      .navbar ol{
+        overflow: auto;
+      }
+      ol a{
+        color: white;
+        text-decoration: none;
+        font-weight: bolder;
+        font-family: garamond, serif;
+        font-size: 22px;
+        margin-top: 40px;
+      }
+      .sidemenu{
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        height: 100%;
+        width: 0px;
+        overflow:hidden;
+        background-color: #ff3399;
+        z-index: 1;
+        overflow-x: hidden;
+        color: white;
+        border: 2px solid #ffe6f2;
+        padding-top: 50px;
+        margin-top: 50px;
+        transition: all 0.2s;
+      }
+      #icon1{
+        transition: all 0.6s;
+      }
+      .sidemenu a {
+        padding-left: 55px;
+        text-decoration: none;
+        font-size: 24px;
+        color: white;
+        display: block;
+        padding-top: 25px;
+      }
+      .sidemenu a:hover{
+        color:#99004d;
+      }
+      .sidemenu .closebtn{
+        position: absolute;
+        top: -18px;
+        right: 35px;
+        font-size: 36px;
+        margin-left: 32px;
+
+      }
+      .navbar li a {
+        padding-left: 20px;
+      }
+      i{
+        margin-top: 9px;
+        color: white;
+      }
+      ol a:hover{
+        color: #99004d;
+      }
+      #icon1:hover{
+        color:#99004d;
+      }
+      #logo{
+        padding-left: 20px;
+      }
+      #heading{
+        color: #ff3399;
+        margin-top: 380px;
+        margin-left: 257px;
+      }
+      #logout{
+        padding-top: 250px;
+      }
+      div input:hover{
+        background-color: #cc0099;
+        color: white;
+      }
+      .services div:hover{
+        background-color: #cc0099;
+        color: white;
+      }
+        .abouts h3{
+        margin-left: 257px;
+        color:#ff3399;
+      }
+      .aboutsimg{
+        height: 400px;
+        width:70px;
+        margin-left: 257px;
+        margin-right: 264px;
+        border: 3px solid white;
+      }
+      .contacts h3{
+        padding-left: 20px;
+        color: white;
+      }
+      .contacts{
+        width: 100%;
+      }
+      .contactdetails{
+        background-color: #ff3399;
+        height: 400px;
+      }
+      .feedback{
+        border: 3px solid white;
+        margin-left:600px;
+      }
+      .feedback label{
+        color: white;
+        font-weight: bold;
+      }
+      .info{
+        color: white;
+        text-align: center;
+      }
+      #submit{
+        margin-left: 120px;
+        color: #ff3399;
+        background-color: white;
+      }
+      .contactdetails h3{
+        text-align: center;
+      }
+      .social{
+        text-align: center;
+      }
+      .social li{
+        display: inline;
+      }
+      .social i{
+        color: white;
+      }
+      #submit:hover{
+        color:white;
+        background-color: #cc0099;
+      }
+      .social i:hover{
+        color: #cc0099;
+      }
+      .feedback label{
+        margin-left: 15px;
+        padding-bottom: 30px;
+      }
+      .feedback input{
+        margin-right: 30px;
+      }
+      .contacts{
+        width: 100%;
+      }
+      #video{
+        height: 400px;
+        width: 1200px;
+        margin-left: 150px;
+      }
+      .shopping div{
+        border:2px solid white;
+        background-color: #ff3399;
+        height: 250px;
+        width: 900px;
+        margin-left: 250px;
+        margin-top: 75px;
+        margin-right: 400px;
+      }
+      #shopsec img{
+        height: 200px;
+        width: 300px;
+        position: relative;
+        left: 20px;
+        top: 25px;
+      }
+      .shopping #shopart{
+        color:white;
+        position: relative;
+        left: 340px;
+        top: -170px;
+        font-size: 20px;
+      }
+      #shopart h5{
+        font-weight: bolder;
+      }
+      .shopping a{
+        text-decoration: none;
+      }
+      #shopsec{
+        height: 250px;
+      }
+      #shopsec:hover{
+        background-color: #cc0099;
+      }
+      .shopping div{
+        margin-top: 20px;
+      }
+      .sidemenu i:hover{
+        color: #cc0099;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <ol>
+          <li id="nothing"><i class="fas fa-align-justify" id="icon1" onclick="openFunction()"></i></li>
+          <li><a href="home.php"><img src="image/translogo.png" alt="logo" height="42px" width="60px" id="logo"</a></li>
+          <li id="serv"><a href="#shopping">Services</a></li>
+          <li id="about"><a href="#abouts">About</a></li>
+          <li id="contact"><a href="#contacts">Contact Us</a></li>
+          <li id="contact"><a href="search.html">Search</a></li>
+        </ol>
+      </nav> <br>
+      <div class="sidemenu" id="menu">
+        <a href="#"><i class="fas fa-user-circle"> Account</i></a>
+        <a href="#shopping"><i class="fas fa-sitemap"> Services</i></a>
+        <a href="#abouts"><i class="fas fa-info-circle"> About Us</i></a>
+        <a href="#contacts"><i class="far fa-address-card"> Contact Us</i></a>
+        <a href="search.html"><i class="fas fa-search"> Search</i></a>
+        <a href="#" id="logout"><i class="fas fa-sign-out-alt" id="icon2"> Log Out</i></a>
+        <a href="#" class="closebtn" onclick="closeFunction()">&times;</a>
+      </div>
+    </header><br>
+    <div class="shopping" id="shopping">
+      <div class="rapido">
+        <a target="_blank" href="https://www.rapido.bike/">
+        <section id="shopsec">
+        <img src="image/rapido.png" alt="rapido">
+        <article id="shopart">
+          <h5>RAPIDO</h5>
+          <h6>It has 150K visitors monthly and has about 10,000,000+ downloads</h6>
+          <h5>Details</h5>
+          <h6>Rapido is India's first and fastest-growing Bike taxi app with a whopping <br>25 Million+ app downloads. We are now running operations in more than <br>100 cities.</h6>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> Overall Rating Of Almost 4.1 Stars
+          </article>
+      </section></a>
+    </div>
+      <div class="vogo">
+        <a target="_blank" href="https://www.vogo.in/">
+        <section id="shopsec">
+        <img src="image/vogo.jpg" alt="vogo">
+        <article id="shopart">
+          <h5>VOGO</h5>
+          <h6>It has 50K visitors monthly and has about 1,000,000+ downloads</h6>
+          <h5>Details</h5>
+          <h6>Vogo offers keyless bike rentals and scooter rentals across Bangalore & <br>Hyderabad. Book for few hours or for a month. Fuel and helmet included!</h6>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> Overall Rating Of Almost 4.1 Stars
+        </article>
+      </section></a>
+      </div>
+      <div class="yulu">
+        <a target="_blank" href="https://www.yulu.bike/">
+        <section id="shopsec">
+        <img src="image/yulu.jpg" alt="yulu">
+        <article id="shopart">
+          <h5>YULU</h5>
+          <h6>It has 83K visitors monthly and has about 1,000,000+ downloads</h6>
+          <h5>Details</h5>
+          <h6>Yulu in News · Union Budget 2021 | Need govt schemes to push banks to <br>Lend to EV manufacturers, operators, says Yulu CEO · Yulu secures Rs 30 <br>Crore equity funding</h6>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> Overall Rating Of Almost 4.2  Stars
+        </article>
+      </section></a>
+    </div>
+      <div class="mybyk">
+        <a target="_blank" href="https://www.mybyk.in/">
+        <section id="shopsec">
+        <img src="image/mybyk.png" alt="mybyk">
+        <article id="shopart">
+          <h5>MYBYK</h5>
+          <h6>It has 30K visitors monthly and has about 100,000+ downloads</h6>
+          <h5>Details</h5>
+          <h6>MYBYK is a bike rental & sharing app. Our aim is to encourage use of <br>Bicycles and public transport and thereby help our cities turn sustainable</h6>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> Overall Rating Of Almost 4.3 Stars
+        </article>
+      </section></a>
+      </div>
+      <div class="bounce">
+        <a target="_blank" href="https://www.bounceshare.com">
+        <section id="shopsec">
+        <img src="image/bounce.jpg" alt="bounce">
+        <article id="shopart">
+          <h5>BOUNCE</h5>
+          <h6>It has 5K visitors monthly and has about 1,000,000+ downloads</h6>
+          <h5>Details</h5>
+          <h6>Bounce Infinity is India's first Electric Scooter that doesn't need charging.<br>Swap your drained battery with a charged one at a Bounce swapping <br>Station and thereby enoy your ride</h6>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i>Overall Rating Of Almost 3.9 Stars
+        </article>
+      </section></a>
+      </div>
+      <div class="drivezy">
+        <a target="_blank" href="https://www.drivezy.com/">
+        <section id="shopsec">
+        <img src="image/drivezy.png" alt="drivezy">
+        <article id="shopart">
+          <h5>DRIVEZY</h5>
+          <h6>It has 37K visitors monthly and has about 1,000,000+ downloads</h6>
+          <h5>Details</h5>
+          <h6>Self-drive car rentals in Bangalore. Rent 5-seater, 6-seater or 7-seater <br>Our wheelers with Drivezy. Rent a car for a day, week or month.</h6>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i><i class="far fa-star"></i> Overall Rating Of Almost 2.8 Stars
+        </article>
+      </section></a>
+      </div>
+      <div class="nextbike">
+        <a target="_blank" href="https://www.nextbike.net/">
+        <section id="shopsec">
+        <img src="image/nextbike.png" alt="nextbike">
+        <article id="shopart">
+          <h5>NEXT BIKE</h5>
+          <h6>It has ** visitors monthly and has about 1,000,000+ downloads</h6>
+          <h5>Details</h5>
+          <h6>nextbike is European market leader in bike sharing. We like to share and <br>Thus mobilise millions of people in a sustainable way. As micro mobility <br>Pioneers</h6>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i> Overall Rating Of Almost 4.0 Stars
+        </article>
+      </section></a>
+      </div>
+  </div>
+    <br>
+    <div class="abouts" id="abouts">
+      <h3 id="abouth">About Us</h3>
+      <div class="aboutsvid">
+        <video src="video/abvid.mp4" type="video/mp4" id="video" autoplay mute></video>`
+      </div>
+    </div><br><br>
+    <div class="contacts" id="contacts">
+      <div class="contactdetails">
+        <h3>Contact Us</h3><br>
+        <form  action="feedback.php" method="post">
+          <table class="feedback">
+            <tr>
+              <td><label for="name">Name: </label></td>
+              <td>  <input type="text" name="name"  placeholder="Enter Your Name"><br><br></td>
+            </tr>
+            <tr>
+              <td><label for="phone">Phone No :</label></td>
+              <td><input type="tel" name="phone"  placeholder="Enter Your Phone No"><br><br></td>
+            </tr>
+            <tr>
+              <td><label for="mail">Email-id: </label></td>
+              <td><input type="mail" name="mail" placeholder="Enter Your Email"><br><br></td>
+            </tr>
+            <tr>
+              <td colspan="2"><input type="submit" id="submit" name="submit" value="SUBMIT"></td>
+            </tr>
+        </table>
+        </form>
+        <div class="info">
+          <p>The rights for the website are reserved. Any violation to disobey laws is under cyber crime any issue of use or copyright may lead to an offence <br>The content
+          is authorized by &#169;<strong> Copyright Act 1957</strong> </p>
+        </div>
+        <div class="social">
+          <a href="https://www.instagram.com/versatileengine/" target="_blank"><li><i class="fab fa-instagram-square" style="font-size : 40px;"></i></li></a>
+          <a href="https://www.facebook.com/profile.php?id=100075057470078" target="_blank"><li><i class="fab fa-facebook-square" style="font-size : 40px;"></i></li></a>
+          <a href="mailto:versatile.engine.2001@gmail.com" target="_blank"><li><i class="fas fa-envelope-square" style="font-size : 40px;"></i></li></a>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      function openFunction(){
+        document.getElementById("menu").style.width="259px";
+        document.getElementById("icon1").style.visibility="hidden";
+        document.getElementById("icon1").style.transition = "0.01s";
+      }
+      function closeFunction(){
+        document.getElementById("menu").style.width="0px";
+        document.getElementById("icon1").style.visibility="visible";
+      }
+      var video = document.querySelector('video');
+      video.muted = true;
+      video.play()
+      video.loop = true;
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    </body>
+</html>

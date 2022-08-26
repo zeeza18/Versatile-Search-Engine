@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>GROCERY SHOPPING</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/a15b5a1603.js" crossorigin="anonymous"></script>
+    <style>
+    body{
+      background-color: #ffe6f2;
+      width: 100%;
+    }
+    .navbar{
+      position: fixed;
+      transition: 0.3s;
+      background-color: #ff3399;
+      margin-top: 0px;
+      height: 50px;
+      width: 100%;
+      z-index: 1;
+    }
+      ol{
+        list-style: none;
+      }
+      .navbar li{
+        float: left;
+      }
+      .navbar ol{
+        overflow: auto;
+      }
+      ol a{
+        color: white;
+        text-decoration: none;
+        font-weight: bolder;
+        font-family: garamond, serif;
+        font-size: 22px;
+        margin-top: 40px;
+      }
+      .sidemenu{
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        height: 100%;
+        width: 0px;
+        overflow:hidden;
+        background-color: #ff3399;
+        z-index: 1;
+        overflow-x: hidden;
+        color: white;
+        border: 2px solid #ffe6f2;
+        padding-top: 50px;
+        margin-top: 50px;
+        transition: all 0.2s;
+      }
+      #icon1{
+        transition: all 0.6s;
+      }
+      .sidemenu a {
+        padding-left: 55px;
+        text-decoration: none;
+        font-size: 24px;
+        color: white;
+        display: block;
+        padding-top: 25px;
+      }
+      .sidemenu a:hover{
+        color:#99004d;
+      }
+      .sidemenu .closebtn{
+        position: absolute;
+        top: -18px;
+        right: 35px;
+        font-size: 36px;
+        margin-left: 32px;
+
+      }
+      .navbar li a {
+        padding-left: 20px;
+      }
+      i{
+        margin-top: 9px;
+        color: white;
+      }
+      ol a:hover{
+        color: #99004d;
+      }
+      #icon1:hover{
+        color:#99004d;
+      }
+      #logo{
+        padding-left: 20px;
+      }
+      #heading{
+        color: #ff3399;
+        margin-top: 380px;
+        margin-left: 257px;
+      }
+      #logout{
+        padding-top: 250px;
+      }
+      div input:hover{
+        background-color: #cc0099;
+        color: white;
+      }
+      .services div:hover{
+        background-color: #cc0099;
+        color: white;
+      }
+        .abouts h3{
+        margin-left: 257px;
+        color:#ff3399;
+      }
+      .aboutsimg{
+        height: 400px;
+        width:70px;
+        margin-left: 257px;
+        margin-right: 264px;
+        border: 3px solid white;
+      }
+      .contacts h3{
+        padding-left: 20px;
+        color: white;
+      }
+      .contacts{
+        width: 100%;
+      }
+      .contactdetails{
+        background-color: #ff3399;
+        height: 400px;
+      }
+      .feedback{
+        border: 3px solid white;
+        margin-left:600px;
+      }
+      .feedback label{
+        color: white;
+        font-weight: bold;
+      }
+      .info{
+        color: white;
+        text-align: center;
+      }
+      #submit{
+        margin-left: 120px;
+        color: #ff3399;
+        background-color: white;
+      }
+      .contactdetails h3{
+        text-align: center;
+      }
+      .social{
+        text-align: center;
+      }
+      .social li{
+        display: inline;
+      }
+      .social i{
+        color: white;
+      }
+      #submit:hover{
+        color:white;
+        background-color: #cc0099;
+      }
+      .social i:hover{
+        color: #cc0099;
+      }
+      .feedback label{
+        margin-left: 15px;
+        padding-bottom: 30px;
+      }
+      .feedback input{
+        margin-right: 30px;
+      }
+      .contacts{
+        width: 100%;
+      }
+      #video{
+        height: 400px;
+        width: 1200px;
+        margin-left: 150px;
+      }
+      .shopping div{
+        border:2px solid white;
+        background-color: #ff3399;
+        height: 250px;
+        width: 900px;
+        margin-left: 250px;
+        margin-top: 75px;
+        margin-right: 400px;
+      }
+      #shopsec img{
+        height: 200px;
+        width: 300px;
+        position: relative;
+        left: 20px;
+        top: 25px;
+      }
+      .shopping #shopart{
+        color:white;
+        position: relative;
+        left: 340px;
+        top: -170px;
+        font-size: 20px;
+      }
+      #shopart h5{
+        font-weight: bolder;
+      }
+      .shopping a{
+        text-decoration: none;
+      }
+      #shopsec{
+        height: 250px;
+      }
+      #shopsec:hover{
+        background-color: #cc0099;
+      }
+      .shopping div{
+        margin-top: 20px;
+      }
+      .sidemenu i:hover{
+        color: #cc0099;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <ol>
+          <li id="nothing"><i class="fas fa-align-justify" id="icon1" onclick="openFunction()"></i></li>
+          <li><a href="home.php"><img src="image/translogo.png" alt="logo" height="42px" width="60px" id="logo"</a></li>
+          <li id="serv"><a href="#shopping">Services</a></li>
+          <li id="about"><a href="#abouts">About</a></li>
+          <li id="contact"><a href="#contacts">Contact Us</a></li>
+          <li id="contact"><a href="search.html">Search</a></li>
+
+        </ol>
+      </nav> <br>
+      <div class="sidemenu" id="menu">
+        <a href="#"><i class="fas fa-user-circle"> Account</i></a>
+        <a href="#shopping"><i class="fas fa-sitemap"> Services</i></a>
+        <a href="#abouts"><i class="fas fa-info-circle"> About Us</i></a>
+        <a href="#contacts"><i class="far fa-address-card"> Contact Us</i></a>
+        <a href="search.html"><i class="fas fa-search"> Search</i></a>
+
+        <a href="#" id="logout"><i class="fas fa-sign-out-alt" id="icon2"> Log Out</i></a>
+        <a href="#" class="closebtn" onclick="closeFunction()">&times;</a>
+      </div>
+    </header><br>
+    <div class="shopping" id="shopping">
+      <div class="bigbasket">
+        <a target="_blank" href="https://www.bigbasket.com/">
+        <section id="shopsec">
+        <img src="image/bigbasket.png" alt="bigbasket">
+        <article id="shopart">
+          <h5>BIGBASKET</h5>
+          <h6>It has 1.5M visitors monthly and has about 10,000,000+ downloads</h6>
+          <h5>Details</h5>
+          <h6>The best online grocery store in India. bigbasket is an online supermarket <br>For all your daily needs. Online shopping now made easy with a wide <br>Range of items to choose from</h6>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> Overall Rating Of Almost 4.5 Stars
+        </article>
+      </section></a>
+      </div>
+      <div class="grofers">
+        <a target="_blank" href="https://www.grofers.com/">
+        <section id="shopsec">
+        <img src="image/grofers.png" alt="grofers">
+        <article id="shopart">
+          <h5>GROFERS</h5>
+          <h6>It has 2.3M visitors monthly and has about 10,000,000+ downloads</h6>
+          <h5>Details</h5>
+          <h6>get chocolates, sweets, dry fruits, snacks and juices delivered from grofers <br>In 10 minutes. get poly milk, tetra milk, dairy whitener, soya milk & vegan <br>Milk delivered in 10 minutes.</h6>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> Overall Rating Of Almost 4.3 Stars
+        </article>
+      </section></a>
+      </div>
+      <div class="dmart">
+        <a target="_blank" href="https://www.dmartindia.com/">
+        <section id="shopsec">
+        <img src="image/dmart.png" alt="dmart">
+        <article id="shopart">
+          <h5>DMART</h5>
+          <h6>It has 230K visitors monthly and has about 10,000,000+ downloads</h6>
+          <h5>Details</h5>
+          <h6>DMART BRANDS. HOME & PERSONAL CARE. BED & BATH. HOME <br>APPLIANCES. CROCKERY. FOOTWEAR. LUGGAGE. TOYS & GAMES. PLASTIC <br>CONTAINERS. KID'S ITEMS AND MUCH MORE</h6>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> Overall Rating Of Almost 4.1  Stars
+        </article>
+      </section></a>
+      </div>
+      <div class="dealshare">
+        <a target="_blank" href="https://www.dealshare.in">
+        <section id="shopsec">
+        <img src="image/dealshare.png" alt="dealshare">
+        <article id="shopart">
+          <h5>DEALSHARE</h5>
+          <h6>It has 1.5M visitors monthly and has about 10,000,000+ downloads</h6>
+          <h5>Details</h5>
+          <h6>DealShare : India's No. 1 Grocery & Delivery App Download now for FREE <br>To get the best deals and lowest prices across groceries and other essential <br>Products</h6>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> Overall Rating Of Almost 4.1 Stars
+        </article>
+      </section></a>
+      </div>
+      <div class="swiggy">
+        <a target="_blank" href="https://www.swiggy.com/">
+        <section id="shopsec">
+        <img src="image/swiggy.png" alt="swiggy">
+        <article id="shopart">
+          <h5>SWIGGY</h5>
+          <h6>It has 20M visitors monthly and has about 100,000,000+ downloads</h6>
+          <h5>Details</h5>
+          <h6>Swiggy suggests local and nearby restaurants to users and receive orders <br>from them. Users can place orders from their favorite restaurant based on <br>Ratings and reviews shared by previous customers.</h6>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> Overall Rating Of Almost 4.1 Stars
+        </article>
+      </section></a>
+      </div>
+      <div class="dunzo">
+        <a target="_blank" href="https://www.dunzo.com/">
+        <section id="shopsec">
+        <img src="image/dunzo.jpg" alt="dunzo">
+        <article id="shopart">
+          <h5>DUNZO</h5>
+          <h6>It has 2M visitors monthly and has about 5,000,000+ downloads</h6>
+          <h5>Details</h5>
+          <h6>Use Dunzo and get free home delivery in your city Order from restaurants <br>nearby, groceries, buy online medicine, purchase meat online, book bike <br>taxi and much more</h6>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> Overall Rating Of Almost 4.6 Stars
+        </article>
+      </section></a>
+      </div>
+      <div class="bring">
+        <a target="_blank" href="https://www.bringg.com/resources/guides/grocery-delivery/">
+        <section id="shopsec">
+        <img src="image/bring.png" alt="bring">
+        <article id="shopart">
+          <h5>CAR TRADE</h5>
+          <h6>It has 2M visitors monthly and has about 5,000,000+ downloads</h6>
+          <h5>Details</h5>
+          <h6>get white bread, brown bread, buns, kulcha, muffins and pizza base <br>Delivered in 10 minutes. get cold pressed oils, cooking pastes and all <br>Grocery essentials delivered in 10 minutes.</h6>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> Overall Rating Of Almost 4.4 Stars
+        </article>
+      </section></a>
+      </div>
+      <div class="pickily">
+        <a target="_blank" href="https://pickily.in/">
+        <section id="shopsec">
+        <img src="image/pickily.png" alt="pickily">
+        <article id="shopart">
+          <h5>PICKILY</h5>
+          <h6>It has 2.7M visitors monthly and has about 1,000,000+ downloads</h6>
+          <h5>Details</h5>
+          <h6>Pickily is an online supermarket app for fresh & handpicked fruits, <br>Vegetables and daily essentials delivered to your doorstep. Explore & <br>Purchase from a</h6>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> Overall Rating Of Almost 4.5 Stars
+          </article>
+      </section></a>
+      </div>
+      <div class="fraazo">
+        <a target="_blank" href="https://www.fraazo.com/">
+        <section id="shopsec">
+        <img src="image/fraazo.jpg" alt="fraazo">
+        <article id="shopart">
+          <h5>FRAAZO</h5>
+          <h6>It has 137K visitors monthly and has about 1,000,000+ downloads</h6>
+          <h5>Details</h5>
+          <h6>Order online Fruits and Vegetables directly from Farm at best price <br>From Fraazo. Get farm-fresh produce under 18 hours from harvest. <br>Best online fruit and Vegetables</h6>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> Overall Rating Of Almost 4.1 Stars
+        </article>
+      </section></a>
+      </div>
+      <div class="zepto">
+        <a target="_blank" href="https://www.zeptonow.com/">
+        <section id="shopsec">
+        <img src="image/zepto.png" alt="zepto">
+        <article id="shopart">
+          <h5>ZEPTO</h5>
+          <h6>It has 5K visitors monthly and has about 100,000+ downloads</h6>
+          <h5>Details</h5>
+          <h6>Over 2000 Essentials Delivered In 10 Minutes. Free Delivery & No Minimum <br>Order. Live Now In Mumbai, Delhi NCR, Bangalore & Chennai. More Cities <br>Launching Soon!</h6>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> Overall Rating Of Almost 4.6 Stars
+        </article>
+      </section></a>
+      </div>
+  </div>
+    <br>
+    <div class="abouts" id="abouts">
+      <h3 id="abouth">About Us</h3>
+      <div class="aboutsvid">
+        <video src="video/abvid.mp4" type="video/mp4" id="video" autoplay mute></video>`
+      </div>
+    </div><br><br>
+    <div class="contacts" id="contacts">
+      <div class="contactdetails">
+        <h3>Contact Us</h3><br>
+        <form  action="feedback.php" method="post">
+          <table class="feedback">
+            <tr>
+              <td><label for="name">Name: </label></td>
+              <td>  <input type="text" name="name"  placeholder="Enter Your Name"><br><br></td>
+            </tr>
+            <tr>
+              <td><label for="phone">Phone No :</label></td>
+              <td><input type="tel" name="phone"  placeholder="Enter Your Phone No"><br><br></td>
+            </tr>
+            <tr>
+              <td><label for="mail">Email-id: </label></td>
+              <td><input type="mail" name="mail" placeholder="Enter Your Email"><br><br></td>
+            </tr>
+            <tr>
+              <td colspan="2"><input type="submit" id="submit" name="submit" value="SUBMIT"></td>
+            </tr>
+        </table>
+        </form>
+        <div class="info">
+          <p>The rights for the website are reserved. Any violation to disobey laws is under cyber crime any issue of use or copyright may lead to an offence <br>The content
+          is authorized by &#169;<strong> Copyright Act 1957</strong> </p>
+        </div>
+        <div class="social">
+          <a href="https://www.instagram.com/versatileengine/" target="_blank"><li><i class="fab fa-instagram-square" style="font-size : 40px;"></i></li></a>
+          <a href="https://www.facebook.com/profile.php?id=100075057470078" target="_blank"><li><i class="fab fa-facebook-square" style="font-size : 40px;"></i></li></a>
+          <a href="mailto:versatile.engine.2001@gmail.com" target="_blank"><li><i class="fas fa-envelope-square" style="font-size : 40px;"></i></li></a>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      function openFunction(){
+        document.getElementById("menu").style.width="259px";
+        document.getElementById("icon1").style.visibility="hidden";
+        document.getElementById("icon1").style.transition = "0.01s";
+      }
+      function closeFunction(){
+        document.getElementById("menu").style.width="0px";
+        document.getElementById("icon1").style.visibility="visible";
+      }
+      var video = document.querySelector('video');
+      video.muted = true;
+      video.play()
+      video.loop = true;
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    </body>
+</html>
